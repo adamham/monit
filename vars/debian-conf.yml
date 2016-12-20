@@ -1,0 +1,12 @@
+monit_process_list:
+
+    - pid: '/var/run/sshd.pid'
+      process: 'sshd'
+      timeout: 60
+      start: '/usr/sbin/service ssh start'
+      stop: '/usr/sbin/service ssh stop'
+    - pid: '/var/run/crond.pid'
+      process: 'crond'
+      timeout: 60
+      start: '/usr/sbin/service cron start'
+      stop: '/usr/sbin/service cron stop'
